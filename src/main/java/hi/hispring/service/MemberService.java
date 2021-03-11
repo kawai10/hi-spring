@@ -9,8 +9,11 @@ import java.util.Optional;
 
 public class MemberService {
 
-    private final Memberrepository memberrepository = new MemoryMemberRepository();
+    private final Memberrepository memberrepository;
 
+    public MemberService(Memberrepository memberrepository) {
+        this.memberrepository = memberrepository;
+    }
 
     /**
      * 회원가입
