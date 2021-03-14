@@ -1,5 +1,6 @@
 package hi.hispring;
 
+import hi.hispring.aop.TimeTraceAop;
 import hi.hispring.repository.JdbcTemplateMemberRepository;
 import hi.hispring.repository.JpaMemberRepository;
 import hi.hispring.repository.MemberRepository;
@@ -25,6 +26,12 @@ public class SpringConfig {
     public MemberService memberService() {
         return new MemberService(memberRepository);
     }
+
+    @Bean
+    public TimeTraceAop timeTraceAop() {
+        return new TimeTraceAop();
+    }
+
 //    @Bean
 //    public MemberRepository memberRepository() {
 // return new MemoryMemberRepository();
