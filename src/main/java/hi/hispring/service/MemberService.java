@@ -1,19 +1,19 @@
 package hi.hispring.service;
 
 import hi.hispring.domain.Member;
-import hi.hispring.repository.Memberrepository;
-import hi.hispring.repository.MemoryMemberRepository;
-import org.springframework.stereotype.Service;
+import hi.hispring.repository.MemberRepository;
 
+
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
-
+@Transactional
 public class MemberService {
 
-    private final Memberrepository memberrepository;
+    private final MemberRepository memberrepository;
 
-    public MemberService(Memberrepository memberrepository) {
+    public MemberService(MemberRepository memberrepository) {
         this.memberrepository = memberrepository;
     }
 
